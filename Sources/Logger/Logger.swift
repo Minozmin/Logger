@@ -19,3 +19,10 @@ public struct Logger {
         }
     }
 }
+
+extension Logger: Loggerable {}
+extension LoggerWrapper where Base == Logger {
+    public func report() {
+        debugPrint("Logger: report success")
+    }
+}
